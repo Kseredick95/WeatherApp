@@ -1,17 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+
 
     <title>Weather Application</title>
 </head>
+
 <body>
-    <script type="text/javascript"></script>
+    <header class="row">
+        <div class="col-md-12">
+            <h1 id="header">Weather Dashboard</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="card-header" id="city-search">
+                <h3 class="fa fa-list-alt"> Search for a city:</h3>
+                <input type="text" placeholder="City name, State" id="userInput">
+                <button id="searchBtn">Search <i class="fa fa-search"></i></button>
+                <ul id="searchHistory"></ul>
+            </div>
+
+            <div class="card-body" id="resultSection">
+                <!-- Change city name -->
+                <h2>City Name</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Tempurature</th>
+                            <th scope="col">Humidity</th>
+                            <th scope="col">Wind Speed</th>
+                            <th scope="col">UV Index</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr></tr>
+                    </tbody>
+                </table>
+                <br>
+                <div class="card-header">
+                    <section>
+                        <h2>Five Day Forecast:</h2>
+                        <div class="container">
+                            <div class="forecast" id="dayOne"></div>
+                            <div class="forecast" id="dayTwo"></div>
+                            <div class="forecast" id="dayThree"></div>
+                            <div class="forecast" id="dayFour"></div>
+                            <div class="forecast" id="dayFive"></div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>

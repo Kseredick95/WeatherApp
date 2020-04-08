@@ -1,0 +1,27 @@
+#header{
+    text-align: center;
+    background-color: rgba(86, 166, 236, 0.76);
+    padding-top: 10px;
+    height: 75px;
+
+}#city-search{
+    float: left;
+    background-color: rgb(228, 222, 222);
+    margin-left: -250px;
+}
+
+#resultSection{
+    float: right;
+}
+
+#searchHistory{
+    background-color: ivory;
+}
+.forecast{
+    background-color: rgba(95, 190, 235, 0.664);
+    margin: 10px;
+    margin-top: 20px;
+    height: 200px;
+    width: 145px;
+    float: left;
+}
