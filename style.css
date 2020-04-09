@@ -14,9 +14,6 @@
     float: right;
 }
 
-#searchHistory{
-    background-color: ivory;
-}
 .forecast{
     background-color: rgba(95, 190, 235, 0.664);
     margin: 10px;
@@ -24,4 +21,11 @@
     height: 200px;
     width: 145px;
     float: left;
+}
+
+li{
+    margin: 5px;
+    border: grey;
+    border-style: double;
+    background-color:whitesmoke;
 }
