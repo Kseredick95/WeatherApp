@@ -28,7 +28,7 @@ function forecast(city) {
         console.log(response)
         $("tbody").append(`
         <tr>
-        <td>${response.main.temp} Kelvin</td>
+        <td>${response.main.temp} °F</td>
         <td>${response.main.humidity} %</td>
         <td>${response.wind.speed} m/s</td>
         <td>${response.weather[0].description}</td>
@@ -39,7 +39,7 @@ function forecast(city) {
 function fiveDay(city) {
     var key = "8d009b070f041e7a5383ba293d41ec25"
 
-    var query = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + ",us&appid=" + key;
+    var query = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + ",us&units=imperial&appid=" + key;
 
     $.ajax({
         url: query,
@@ -49,7 +49,7 @@ function fiveDay(city) {
         console.log(response)
         $("#dayOne").append(`
             <h3>${month}/${day}/${year}</h3>
-            <p>${response.list[0].main.temp} Kelvin</p>
+            <p>${response.list[0].main.temp} °F</p>
             <p>${response.list[0].main.humidity} %</p>
             <p>${response.list[0].wind.speed} m/s</p>
             <p>${response.list[0].weather[0].description}</p>
@@ -57,7 +57,8 @@ function fiveDay(city) {
 
         $("#dayTwo").append(`
             <h3>${month}/${day + 1}/${year}</h3>
-            <p>${response.list[1].main.temp} Kelvin</p>
+            
+            <p>${response.list[1].main.temp} °F</p>
             <p>${response.list[1].main.humidity} %</p>
             <p>${response.list[1].wind.speed} m/s</p>
             <p>${response.list[1].weather[0].description}</p>
@@ -65,7 +66,7 @@ function fiveDay(city) {
 
         $("#dayThree").append(`
             <h3>${month}/${day + 2}/${year}</h3>
-            <p>${response.list[2].main.temp} Kelvin</p>
+            <p>${response.list[2].main.temp} °F</p>
             <p>${response.list[2].main.humidity} %</p>
             <p>${response.list[2].wind.speed} m/s</p>
             <p>${response.list[2].weather[0].description}</p>
@@ -73,7 +74,7 @@ function fiveDay(city) {
 
         $("#dayFour").append(`
             <h3>${month}/${day + 3}/${year}</h3>
-            <p>${response.list[3].main.temp} Kelvin</p>
+            <p>${response.list[3].main.temp} °F</p>
             <p>${response.list[3].main.humidity} %</p>
             <p>${response.list[3].wind.speed} m/s</p>
             <p>${response.list[3].weather[0].description}</p>
@@ -81,7 +82,7 @@ function fiveDay(city) {
 
         $("#dayFive").append(`
             <h3>${month}/${day + 4}/${year}</h3>
-            <p>${response.list[4].main.temp} Kelvin</p>
+            <p>${response.list[4].main.temp} °F</p>
             <p>${response.list[4].main.humidity} %</p>
             <p>${response.list[4].wind.speed} m/s</p>
             <p>${response.list[4].weather[0].description}</p>
