@@ -1,4 +1,4 @@
-var pastCity = ["Atlanta","Chicago","New York","Hollywood"]
+var pastCity = []
 var d = new Date();
 
 var day = d.getDate();
@@ -7,19 +7,18 @@ var year = d.getFullYear();
 
 var lastSearched = JSON.parse(localStorage.getItem("cities"));
 
-pastCity.forEach(element => {
-    $("#searchHistory").prepend(`
-    <ul>
-    <li>${element}</li>
-    </ul>`)
-});
+if (lastSearched != null){
+    lastSearchedCities ()
+}
 
-lastSearched.forEach(element => {
-    $("#searchHistory").prepend(`
-    <ul>
-    <li>${element}</li>
-    </ul>`)
-});
+function lastSearchedCities () {
+    lastSearched.forEach(element => {
+        $("#searchHistory").prepend(`
+        <ul>
+        <li><button id = "searched">${element}</button></li>
+        </ul>`)
+    });
+}
 
 
 function forecast(city) {
@@ -107,7 +106,7 @@ $("#searchBtn").on("click", function () {
 
     $("#searchHistory").prepend(`
     <ul>
-    <li>${city}</li>
+    <li><button id = "searched" >${city}</button></li>
     <ul>`);
 
     pastCity.push(city);
@@ -116,5 +115,12 @@ $("#searchBtn").on("click", function () {
 
     forecast(city);
     fiveDay(city);
+})
+
+$("#searchHistory").on("click", "button", function(){
+    var selectedCity = $(this).text()
+
+    forecast(selectedCity)
+    fiveDay(selectedCity)
 })
 

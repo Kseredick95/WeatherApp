@@ -27,7 +27,7 @@
     background-color: green;
 }
 
-li{
+#searched{
     margin: 5px;
     border: rgb(128, 128, 128);
     border-style: double;
