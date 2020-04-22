@@ -6,7 +6,7 @@
 
 }#city-search{
     float: left;
-    background-color: rgb(228, 222, 222);
+    
     margin-left: -250px;
 }
 
@@ -21,11 +21,20 @@
     height: 200px;
     width: 145px;
     float: left;
+    border-radius: 25px;
+}
+#forecastBox{
+    background-color: green;
 }
 
 li{
     margin: 5px;
-    border: grey;
+    border: rgb(128, 128, 128);
     border-style: double;
-    background-color:whitesmoke;
+    background-color:rgba(131, 131, 131, 0.336);
+    border-radius: 25px;
+    text-align: center;
+}
+thead{
+    background-color: rgba(245, 245, 66, 0.719);    
 }

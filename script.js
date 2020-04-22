@@ -1,4 +1,4 @@
-var pastCity = []
+var pastCity = ["Atlanta","Chicago","New York","Hollywood"]
 var d = new Date();
 
 var day = d.getDate();
@@ -7,6 +7,13 @@ var year = d.getFullYear();
 
 var lastSearched = JSON.parse(localStorage.getItem("cities"));
 
+pastCity.forEach(element => {
+    $("#searchHistory").prepend(`
+    <ul>
+    <li>${element}</li>
+    </ul>`)
+});
+
 lastSearched.forEach(element => {
     $("#searchHistory").prepend(`
     <ul>
@@ -14,10 +21,11 @@ lastSearched.forEach(element => {
     </ul>`)
 });
 
+
 function forecast(city) {
     var key = "8d009b070f041e7a5383ba293d41ec25"
 
-    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + key;
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + key;
 
     $("#city-name").text(city + " " + month + "/" + day + "/" + year)
 
@@ -94,7 +102,7 @@ function fiveDay(city) {
 $("#searchBtn").on("click", function () {
     event.preventDefault();
     $("tbody").empty();
-    // Clear forecast
+    $(".forecast").empty();
     var city = $("#userInput").val();
 
     $("#searchHistory").prepend(`
